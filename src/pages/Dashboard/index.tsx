@@ -9,7 +9,7 @@ import logoImage from '../../assets/logo.svg';
 
 import { Title, Form, Badges, Error } from './styles';
 
-interface BadgeState {
+interface Badge {
   name: string;
   badge: string;
   link: string;
@@ -17,7 +17,7 @@ interface BadgeState {
 
 const Dashboard: React.FC = () => {
   const [repo, setRepo] = useState('');
-  const [badges, setBadges] = useState<BadgeState[]>([]);
+  const [badges, setBadges] = useState<Badge[]>([]);
   const [inputError, setInputError] = useState('');
 
   async function handleCreateBadges(

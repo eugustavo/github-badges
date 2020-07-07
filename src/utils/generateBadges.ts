@@ -1,5 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export default function generateBadges(repo: string): any {
+interface Badge {
+  name: string;
+  badge: string;
+  link: string;
+}
+
+export default function generateBadges(repo: string): Badge[] {
   const badges = [
     {
       name: 'Github Language Count',

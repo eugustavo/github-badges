@@ -1,21 +1,24 @@
-<h1 align="center">
-    <p align="center">
-      <img width="300" alt="GitHub Badges" src="https://img.shields.io/badge/CREATE-Badges-green?style=for-the-badge" />
-    </p>
-    <br>
-    Github Badges
-</h1>
+<br>
+<div align="center">
+  <img width="300" alt="GitHub Badges" src="https://img.shields.io/badge/Github-Badges-green?style=for-the-badge" />
 
-<h4 align="center">
+  <h4 align="center">
+    Github Badges é uma aplicação web, construída com ReactJS, visando facilitar a criação de badges para README de projetos. Acesse-a <a href="https://github-badges.netlify.app/">aqui</a>
+  </h4>
+</div>
 
-</h4>
+---
+
+<p align="center">
+  <img width="180" src="https://api.netlify.com/api/v1/badges/cb1ad6aa-e773-4f97-bc58-ffce98b9e71a/deploy-status" />
+</p>
 
 <p align="center">
 
 </p>
 
 <p align="center">
-  <img alt="GithubBadges" src="">
+  <img alt="GithubBadges" src="https://i.imgur.com/iVHflLU.gif">
 </p>
 
 
@@ -52,6 +55,6 @@ Se quiser contribuir para essa aplicação, seja corrigindo algum problema, adic
 Depois que o *merge* da sua *pull request* for feito, você pode deletar a sua *branch*.
 
 ---
-
 Feito com ♥ por Gustavo Souza :wave: [Contato](https://www.linkedin.com/in/eugustavosouza/)
+
 
