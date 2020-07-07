@@ -15,6 +15,20 @@
 
 <p align="center">
 
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/eugustavo/github-badges" />
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/eugustavo/github-badges" />
+  <img alt="" src="https://img.shields.io/github/repo-size/eugustavo/github-badges" />
+  <img alt="GitHub Issues" src="https://img.shields.io/github/issues/eugustavo/github-badges" />
+  <img alt="GitHub Closed Issues" src="https://img.shields.io/github/issues-closed/eugustavo/github-badges" />
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/eugustavo/github-badges" />
+  <img alt="GitHub Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/eugustavo/github-badges" />
+  <img alt="GitHub Package.json Version" src="https://img.shields.io/github/package-json/v/eugustavo/github-badges" />
+  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/eugustavo/github-badges" />
+  <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/eugustavo/github-badges" />
+  <img alt="GitHub Commit Activity (Week)" src="https://img.shields.io/github/commit-activity/w/eugustavo/github-badges" />
+  <img alt="GitHub Commit Activity (Month)" src="https://img.shields.io/github/commit-activity/m/eugustavo/github-badges" />
+  <img alt="GitHub Commit Activity (Year)" src="https://img.shields.io/github/commit-activity/y/eugustavo/github-badges" />
+
 </p>
 
 <p align="center">
