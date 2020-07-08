@@ -49,7 +49,7 @@ $ cd eugustavo/github-badges
 # Instale as dependências
 $ yarn install
 
-# Inicie o aplicativo (necessário que o emulador esteja aberto)
+# Inicie a aplicação
 $ yarn start
 ```
 
