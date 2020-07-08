@@ -72,6 +72,11 @@ export default function generateBadges(repo: string): Badge[] {
       badge: `<img alt="GitHub Commit Activity (Year)" src="https://img.shields.io/github/commit-activity/y/${repo}" />`,
       link: `https://img.shields.io/github/commit-activity/y/${repo}`,
     },
+    {
+      name: 'GitHub License',
+      badge: `<img alt="Github License" src="https://img.shields.io/github/license/${repo}" />`,
+      link: `https://img.shields.io/github/license/${repo}`,
+    },
   ];
 
   return badges;
