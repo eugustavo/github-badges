@@ -19,7 +19,7 @@ interface Badge {
 }
 
 const Dashboard: React.FC = () => {
-  const [repo, setRepo] = useState('');
+  const [text, setText] = useState('');
   const [badges, setBadges] = useState<Badge[]>([]);
   const [inputError, setInputError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,19 +29,24 @@ const Dashboard: React.FC = () => {
   ): Promise<void> {
     event.preventDefault();
 
-    if (!repo) {
-      setInputError('Digite o usuário/nome do repositório');
+    const [username, repository] = text.trim().split('/');
+
+    if (!username) {
+      setInputError('Digite o nome de usuário do GitHub');
+      return;
+    } else if (!repository) {
+      setInputError('Digite o nome do repositório do GitHub');
       return;
     }
 
     try {
       setLoading(true);
-      await api.get(`repos/${repo}`);
+      await api.get(`repos/${username}/${repository}`);
 
-      const response = generateBadges(repo);
+      const response = generateBadges(`${username}/${repository}`);
 
       setBadges(response);
-      setRepo('');
+      setText(`${username}/`);
       setInputError('');
     } catch (err) {
       setInputError('Erro na busca por esse repositório');
@@ -72,8 +77,8 @@ const Dashboard: React.FC = () => {
       <Form hasError={!!inputError} onSubmit={handleCreateBadges}>
         <input
           type="text"
-          value={repo}
-          onChange={e => setRepo(e.target.value)}
+          value={text}
+          onChange={e => setText(e.target.value)}
           placeholder="username/repo (ex: eugustavo/github-badges)"
         />
         <button type="submit">Gerar Badges</button>
