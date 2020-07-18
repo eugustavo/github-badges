@@ -7,6 +7,8 @@ import generateBadges from '../../utils/generateBadges';
 import api from '../../services/api';
 import logoImage from '../../assets/logo.svg';
 import loadingImage from '../../assets/loading.svg';
+import rocketImage from '../../assets/rocket.png';
+import sparklesImage from '../../assets/sparkles.png';
 
 import { Title, Form, Badges, Error, LoadingIcon, Center } from './styles';
 
@@ -55,16 +57,26 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <img src={logoImage} alt="Logo Github Explorer" />
-      <Title>Crie badges para seu README</Title>
+      <Title>
+        <img
+          src={rocketImage}
+          alt="Ícone"
+          width={37}
+          style={{ marginRight: 4 }}
+        />
+        Crie Badges
+        <br />
+        para seu README <img src={sparklesImage} alt="Ícone" width={38} />
+      </Title>
 
       <Form hasError={!!inputError} onSubmit={handleCreateBadges}>
         <input
           type="text"
           value={repo}
           onChange={e => setRepo(e.target.value)}
-          placeholder="Digite o usuário/nome do repositório"
+          placeholder="username/repo (ex: eugustavo/github-badges)"
         />
-        <button type="submit">Gerar badges</button>
+        <button type="submit">Gerar Badges</button>
       </Form>
 
       {inputError && <Error>{inputError}</Error>}
