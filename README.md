@@ -45,7 +45,7 @@ Para clonar e executar a aplicação, você precisará ter instalado em sua máq
 $ git clone https://github.com/eugustavo/github-badges
 
 # Acesse o repositório
-$ cd eugustavo/github-badges
+$ cd github-badges
 
 # Instale as dependências
 $ yarn install
