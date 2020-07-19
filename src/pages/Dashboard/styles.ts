@@ -105,3 +105,23 @@ export const Badges = styled.div`
     }
   }
 `;
+
+interface ImgProp {
+  isLoading: boolean;
+}
+
+export const LoadingIcon = styled.img<ImgProp>`
+  display: none;
+
+  ${props =>
+    props.isLoading &&
+    css`
+      display: block;
+      margin-top: 50px;
+    `}
+`;
+
+export const Center = styled.div`
+  display: flex;
+  justify-content: center;
+`;

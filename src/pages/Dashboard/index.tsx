@@ -6,8 +6,9 @@ import generateBadges from '../../utils/generateBadges';
 
 import api from '../../services/api';
 import logoImage from '../../assets/logo.svg';
+import loadingImage from '../../assets/loading.svg';
 
-import { Title, Form, Badges, Error } from './styles';
+import { Title, Form, Badges, Error, LoadingIcon, Center } from './styles';
 
 interface Badge {
   name: string;
@@ -19,6 +20,7 @@ const Dashboard: React.FC = () => {
   const [repo, setRepo] = useState('');
   const [badges, setBadges] = useState<Badge[]>([]);
   const [inputError, setInputError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function handleCreateBadges(
     event: FormEvent<HTMLFormElement>,
@@ -31,6 +33,7 @@ const Dashboard: React.FC = () => {
     }
 
     try {
+      setLoading(true);
       await api.get(`repos/${repo}`);
 
       const response = generateBadges(repo);
@@ -40,6 +43,8 @@ const Dashboard: React.FC = () => {
       setInputError('');
     } catch (err) {
       setInputError('Erro na busca por esse repositório');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -64,22 +69,28 @@ const Dashboard: React.FC = () => {
 
       {inputError && <Error>{inputError}</Error>}
 
-      <Badges>
-        {badges.map(badge => (
-          <CopyToClipboard
-            key={badge.name}
-            text={badge.badge}
-            onCopy={copyBadges}
-          >
-            <button type="button">
-              <div>
-                <strong>{badge.name}</strong>
-                <img src={badge.link} alt={badge.name} />
-              </div>
-            </button>
-          </CopyToClipboard>
-        ))}
-      </Badges>
+      <Center>
+        <LoadingIcon isLoading={loading} src={loadingImage} alt="Loading" />
+      </Center>
+
+      {!loading && badges.length > 0 && (
+        <Badges>
+          {badges.map(badge => (
+            <CopyToClipboard
+              key={badge.name}
+              text={badge.badge}
+              onCopy={copyBadges}
+            >
+              <button type="button">
+                <div>
+                  <strong>{badge.name}</strong>
+                  <img src={badge.link} alt={badge.name} />
+                </div>
+              </button>
+            </CopyToClipboard>
+          ))}
+        </Badges>
+      )}
     </>
   );
 };
