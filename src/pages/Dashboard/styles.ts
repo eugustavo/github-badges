@@ -23,7 +23,7 @@ export const Form = styled.form<FormProp>`
     flex: 1;
     height: 70px;
     padding: 0 24px;
-
+    font-size: 16px;
     border: 2px solid #fff;
     border-right: 0px;
     border-radius: 5px 0 0 5px;
@@ -48,6 +48,7 @@ export const Form = styled.form<FormProp>`
     border: 0;
     color: #fff;
     font-weight: bold;
+    font-size: 18px;
     transition: background-color 0.4s;
 
     &:hover {
@@ -66,19 +67,16 @@ export const Error = styled.span`
 export const Badges = styled.div`
   margin-top: 80px;
   max-width: 700px;
+  display: flex;
+  flex-direction: column;
 
   button {
-    background: #fff;
-    border-radius: 5px;
-    border: 0;
-    width: 100%;
-    height: 100px;
-    padding: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: none;
     transition: all 0.3s ease-in-out;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-radius: 5px;
 
     & + button {
       margin-top: 16px;
@@ -88,20 +86,16 @@ export const Badges = styled.div`
       transform: scale(1.05);
       box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
     }
+  }
 
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 0 16px;
+  p {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+  }
 
-      strong {
-        font-size: 20px;
-        color: #3d3d4d;
-        margin-right: 10px;
-      }
-    }
+  img {
+    margin-top: 13px;
   }
 `;
 

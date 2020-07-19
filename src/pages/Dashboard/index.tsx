@@ -56,7 +56,10 @@ const Dashboard: React.FC = () => {
   }
 
   function copyBadges() {
-    toast.success('Badge copiado para área de transferência');
+    toast.success(
+      'Seu Badge foi copiado para a Área de Transferência. Agora basta colá-lo em seu README! :)',
+      { bodyStyle: { padding: 10 } },
+    );
   }
 
   return (
@@ -100,10 +103,10 @@ const Dashboard: React.FC = () => {
               text={badge.badge}
               onCopy={copyBadges}
             >
-              <button type="button">
+              <button>
                 <div>
-                  <strong>{badge.name}</strong>
-                  <img src={badge.link} alt={badge.name} />
+                  <p>{badge.name}</p>
+                  <img src={badge.link} alt={badge.name} loading="lazy" />
                 </div>
               </button>
             </CopyToClipboard>
