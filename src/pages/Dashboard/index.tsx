@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
       const response = generateBadges(`${username}/${repository}`);
 
       setBadges(response);
-      setText(`${username}/`);
+      setText('');
       setInputError('');
     } catch (err) {
       setInputError('Erro na busca por esse repositório');
