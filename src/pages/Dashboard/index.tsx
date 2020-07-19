@@ -81,7 +81,9 @@ const Dashboard: React.FC = () => {
           onChange={e => setText(e.target.value)}
           placeholder="username/repo (ex: eugustavo/github-badges)"
         />
-        <button type="submit">Gerar Badges</button>
+        <button type="submit" disabled={loading}>
+          Gerar Badges
+        </button>
       </Form>
 
       {inputError && <Error>{inputError}</Error>}
