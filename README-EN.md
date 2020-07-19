@@ -45,7 +45,7 @@ To clone and execute the application, you have to install: [Git](https://git-scm
 # Clone this repository
 $ git clone https://github.com/eugustavo/github-badges
 
-# Acesse this repository
+# Acess this repository
 $ cd github-badges
 
 # Install the dependencies
@@ -62,10 +62,10 @@ If you want to contribute for this project, either correcting an error, adding c
 
 - Do [a fork](https://help.github.com/pt/github/getting-started-with-github/fork-a-repo) of this repository;
 - Go to your profile, and clone your repository that you have *forked*;
-- Make a *branch* with your changes: `git checkout -b minha-alteracao`;
+- Make a *branch* with your changes: `git checkout -b my-change`;
 - Do the necessary alterations in the code or in the documentation;
-- Do a *commit* of your changes: `git commit -m 'feat: Minha nova feature'`;
-- Do a *push* to your *branch*: `git push origin minha-alteracao`;
+- Do a *commit* of your changes: `git commit -m 'feat: my new feature'`;
+- Do a *push* to your *branch*: `git push origin my-change`;
 - Now it's just open a *pull request* in the *forked* repository;
 
 After the *merge* of your *pull request* have been done, you can delete your *branch*.
