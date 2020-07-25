@@ -93,6 +93,7 @@ export const Badges = styled.div`
     div {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       margin: 0 16px;
@@ -101,6 +102,10 @@ export const Badges = styled.div`
         font-size: 20px;
         color: #3d3d4d;
         margin-right: 10px;
+      }
+
+      img {
+        max-width: 100%;
       }
     }
   }
