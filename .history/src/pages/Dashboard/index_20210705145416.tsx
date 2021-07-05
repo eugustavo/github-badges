@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
 
@@ -42,9 +42,9 @@ const Dashboard: React.FC = () => {
       await api.get(`repos/${username}/${repository}`);
 
       const response = generateBadges(`${username}/${repository}`);
-      const userRepo = `${username}/${repository}`;
-      localStorage.setItem('user_repo', userRepo);
+
       setBadges(response);
+      setText('');
       setInputError('');
     } catch (err) {
       setInputError('Erro na busca por esse repositório');
@@ -52,12 +52,6 @@ const Dashboard: React.FC = () => {
       setLoading(false);
     }
   }
-
-  useEffect(() => {
-    const storageUserRepo = localStorage.getItem('user_repo');
-    const userRepo = JSON.stringify(storageUserRepo).replace(/(^"|"$)/g, '');
-    setText(userRepo);
-  }, [])
 
   function copyBadges() {
     toast.success('Badge copiado para área de transferência');

@@ -45,6 +45,7 @@ const Dashboard: React.FC = () => {
       const userRepo = `${username}/${repository}`;
       localStorage.setItem('user_repo', userRepo);
       setBadges(response);
+      setText('');
       setInputError('');
     } catch (err) {
       setInputError('Erro na busca por esse repositório');
