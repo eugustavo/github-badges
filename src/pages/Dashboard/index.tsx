@@ -8,7 +8,15 @@ import api from '../../services/api';
 import logoImage from '../../assets/logo.svg';
 import loadingImage from '../../assets/loading.svg';
 
-import { Title, Form, Badges, Error, LoadingIcon, Center } from './styles';
+import {
+  Title,
+  RepositoryName,
+  Form,
+  Badges,
+  Error,
+  LoadingIcon,
+  Center,
+} from './styles';
 
 interface Badge {
   name: string;
@@ -18,7 +26,17 @@ interface Badge {
 
 const Dashboard: React.FC = () => {
   const [text, setText] = useState('');
-  const [badges, setBadges] = useState<Badge[]>([]);
+  const [prevRepoName, setPrevRepoName] = useState(
+    localStorage.getItem('@repo'),
+  );
+  const [badges, setBadges] = useState<Badge[]>(() => {
+    const hasBadges = JSON.parse(localStorage.getItem('@badges')!);
+
+    if (hasBadges && hasBadges.length > 0) {
+      return hasBadges;
+    }
+    return [];
+  });
   const [inputError, setInputError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -44,6 +62,9 @@ const Dashboard: React.FC = () => {
       const response = generateBadges(`${username}/${repository}`);
 
       setBadges(response);
+      localStorage.setItem('@badges', JSON.stringify(response));
+      localStorage.setItem('@repo', `${username}/${repository}`);
+      setPrevRepoName(`${username}/${repository}`);
       setText('');
       setInputError('');
     } catch (err) {
@@ -75,6 +96,8 @@ const Dashboard: React.FC = () => {
       </Form>
 
       {inputError && <Error>{inputError}</Error>}
+
+      <RepositoryName>{prevRepoName}</RepositoryName>
 
       <Center>
         <LoadingIcon isLoading={loading} src={loadingImage} alt="Loading" />

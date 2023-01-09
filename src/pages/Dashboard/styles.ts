@@ -14,6 +14,15 @@ export const Title = styled.h1`
   margin-top: 80px;
 `;
 
+export const RepositoryName = styled.h1`
+  font-size: 32px;
+  color: #3a3a3a;
+  max-width: 735px;
+  line-height: 56px;
+
+  margin-top: 40px;
+`;
+
 export const Form = styled.form<FormProp>`
   margin-top: 40px;
   max-width: 700px;
