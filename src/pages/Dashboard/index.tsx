@@ -62,7 +62,7 @@ const Dashboard: React.FC = () => {
       const response = generateBadges(`${username}/${repository}`);
 
       setBadges(response);
-      localStorage.setItem('@badges', JSON.stringify(response));
+      localStorage.setItem('@GithubBadges:Badges', JSON.stringify(response));
       localStorage.setItem('@repo', `${username}/${repository}`);
       setPrevRepoName(`${username}/${repository}`);
       setText('');
