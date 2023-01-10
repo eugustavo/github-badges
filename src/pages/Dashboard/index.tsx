@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
     localStorage.getItem('@GithubBadges:Repo'),
   );
   const [badges, setBadges] = useState<Badge[]>(() => {
-    const hasBadges = JSON.parse(localStorage.getItem('@badges')!);
+    const hasBadges = JSON.parse(localStorage.getItem('@GithubBadges:Badges')!);
 
     if (hasBadges && hasBadges.length > 0) {
       return hasBadges;
