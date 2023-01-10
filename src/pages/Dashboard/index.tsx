@@ -27,7 +27,7 @@ interface Badge {
 const Dashboard: React.FC = () => {
   const [text, setText] = useState('');
   const [prevRepoName, setPrevRepoName] = useState(
-    localStorage.getItem('@repo'),
+    localStorage.getItem('@GithubBadges:Repo'),
   );
   const [badges, setBadges] = useState<Badge[]>(() => {
     const hasBadges = JSON.parse(localStorage.getItem('@badges')!);
